@@ -1,0 +1,622 @@
+:root {
+    /* Color Palette */
+    --primary-color: #00A0DC;
+    --secondary-color: #1A374D;
+    --dark-bg: #051622;
+    --text-light: #FFFFFF;
+    --text-gray: #B0B0B0;
+    --card-bg: rgba(255, 255, 255, 0.1);
+    
+    /* Spacing */
+    --spacing-xs: 0.5rem;
+    --spacing-sm: 1rem;
+    --spacing-md: 2rem;
+    --spacing-lg: 4rem;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    line-height: 1.6;
+    background-color: var(--dark-bg);
+    color: var(--text-light);
+}
+
+/* Hero Section */
+.hero {
+    min-height: 100vh;
+    background: 
+                url('./assets/industrial-bg.png') no-repeat center center/cover;
+            
+    padding: var(--spacing-md);
+}
+
+.navbar {
+    padding: var(--spacing-sm) 0;
+}
+
+.logo {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: var(--primary-color);
+}
+
+.hero-content {
+    max-width: 800px;
+    margin: var(--spacing-lg) auto;
+    text-align: center;
+}
+
+.hero-content h1 {
+    font-size: 3rem;
+    margin-bottom: var(--spacing-md);
+}
+
+.hero-content p {
+    font-size: 1.2rem;
+    color: var(--text-gray);
+    margin-bottom: var(--spacing-md);
+}
+
+/* Buttons */
+.btn-primary, .btn-secondary {
+    padding: 0.8rem 2rem;
+    border-radius: 5px;
+    border: none;
+    cursor: pointer;
+    font-weight: bold;
+    transition: transform 0.3s ease;
+}
+
+.btn-primary {
+    background-color: var(--primary-color);
+    color: var(--text-light);
+    margin-right: var(--spacing-sm);
+}
+
+.btn-secondary {
+    background-color: transparent;
+    border: 2px solid var(--primary-color);
+    color: var(--text-light);
+}
+
+.btn-primary:hover, .btn-secondary:hover {
+    transform: translateY(-2px);
+}
+
+/* Stats Section */
+.stats {
+    display: flex;
+    justify-content: center;
+    gap: var(--spacing-md);
+    margin: var(--spacing-lg) 0;
+    flex-wrap: wrap;
+}
+
+.stat-item {
+    text-align: center;
+}
+
+.stat-number {
+    font-size: 2rem;
+    font-weight: bold;
+    color: var(--primary-color);
+    display: block;
+}
+
+.stat-text {
+    color: var(--text-gray);
+}
+
+/* Brands */
+.brands {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: var(--spacing-md);
+    flex-wrap: wrap;
+    margin: var(--spacing-lg) 0;
+}
+
+.brands img {
+    height: 30px;
+    filter: brightness(0) invert(1);
+    opacity: 0.7;
+    transition: opacity 0.3s ease;
+}
+
+.brands img:hover {
+    opacity: 1;
+}
+
+/* Services Section */
+.services {
+    padding: var(--spacing-lg) var(--spacing-md);
+    text-align: center;
+}
+
+.services h2 {
+    color: var(--primary-color);
+    margin-bottom: var(--spacing-sm);
+}
+
+.services-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: var(--spacing-md);
+    margin-top: var(--spacing-lg);
+}
+
+.service-card {
+    background-color: var(--card-bg);
+    padding: var(--spacing-md);
+    border-radius: 10px;
+    transition: transform 0.3s ease;
+}
+
+.service-card:hover {
+    transform: translateY(-5px);
+}
+
+.number {
+    color: var(--primary-color);
+    font-size: 1.2rem;
+    font-weight: bold;
+}
+
+.btn-read-more {
+    background-color: transparent;
+    border: none;
+    color: var(--primary-color);
+    cursor: pointer;
+    margin-top: var(--spacing-sm);
+}
+
+/* General Services Section */
+.general-services {
+    padding: var(--spacing-lg) var(--spacing-md);
+    background-color: rgba(255, 255, 255, 0.05);
+}
+
+.services-lists {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: var(--spacing-lg);
+    margin-top: var(--spacing-lg);
+}
+
+.service-category h5 {
+    color: var(--primary-color);
+    margin-bottom: var(--spacing-sm);
+}
+
+.service-category ul {
+    list-style: none;
+}
+
+.service-category li {
+    margin-bottom: var(--spacing-xs);
+    color: var(--text-gray);
+}
+
+/* Location Section */
+.location {
+    padding: var(--spacing-lg) var(--spacing-md);
+    text-align: center;
+}
+
+.locations-container {
+    display: flex;
+    justify-content: center;
+    gap: var(--spacing-lg);
+    margin-top: var(--spacing-lg);
+    flex-wrap: wrap;
+}
+
+.location-item {
+    background-color: var(--card-bg);
+    padding: var(--spacing-md);
+    border-radius: 10px;
+    min-width: 250px;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .hero-content h1 {
+        font-size: 2rem;
+    }
+
+    .hero-content p {
+        font-size: 1rem;
+    }
+
+    .stats {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .services-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .brands {
+        gap: var(--spacing-sm);
+    }
+
+    .brands img {
+        height: 20px;
+    }
+}
+
+@media (max-width: 480px) {
+    :root {
+        --spacing-lg: 2rem;
+        --spacing-md: 1rem;
+    }
+
+    .hero {
+        padding: var(--spacing-sm);
+    }
+
+    .btn-primary, .btn-secondary {
+        display: block;
+        width: 100%;
+        margin: var(--spacing-sm) 0;
+    }
+
+    .locations-container {
+        flex-direction: column;
+    }
+}
+
+/* Animations */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.hero-content, .stats, .services-grid, .locations-container {
+    animation: fadeIn 1s ease-out;
+}
+
+
+.contact-card {
+    background: linear-gradient(rgba(0, 160, 220, 0.3), rgba(0, 160, 220, 0.3)),
+                url('./assets/mini-earth.png') no-repeat center center/cover;
+    padding: var(--spacing-md);
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 200px;
+    position: relative;
+    overflow: hidden;
+    transition: transform 0.3s ease;
+}
+
+.contact-card:hover {
+    transform: translateY(-5px);
+}
+
+.contact-card h4 {
+    color: var(--text-light);
+    font-size: 1.5rem;
+    margin-bottom: var(--spacing-md);
+    text-align: center;
+}
+
+.btn-contact {
+    background-color: var(--text-light);
+    color: var(--primary-color);
+    padding: 0.8rem 2rem;
+    border: none;
+    border-radius: 5px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+}
+
+.btn-contact:hover {
+    transform: scale(1.05);
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .contact-card {
+        min-height: 180px;
+    }
+    
+    .contact-card h4 {
+        font-size: 1.2rem;
+    }
+}
+
+
+.general-services {
+    padding: var(--spacing-lg) var(--spacing-md);
+    background: 
+                url('./assets/industrial-plant.png') no-repeat center center/cover;
+    position: relative;
+    color: var(--text-light);
+}
+
+.section-header {
+    margin-bottom: var(--spacing-lg);
+}
+
+.section-header h2 {
+    color: var(--primary-color);
+    font-size: 1.2rem;
+    margin-bottom: var(--spacing-xs);
+}
+
+.section-header h3 {
+    font-size: 2rem;
+    margin-bottom: var(--spacing-md);
+}
+
+.maintenance-info {
+    max-width: 600px;
+    margin-bottom: var(--spacing-lg);
+}
+
+.maintenance-info h4 {
+    font-size: 1.5rem;
+    margin-bottom: var(--spacing-sm);
+}
+
+.maintenance-info p {
+    color: var(--text-gray);
+    margin-bottom: var(--spacing-md);
+}
+
+.btn-lets-talk {
+    background-color: var(--primary-color);
+    color: var(--text-light);
+    padding: 0.8rem 2rem;
+    border: none;
+    border-radius: 5px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+}
+
+.btn-lets-talk:hover {
+    transform: translateY(-2px);
+}
+
+.services-lists {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: var(--spacing-lg);
+    margin-top: var(--spacing-lg);
+}
+
+.service-category {
+    background-color: rgba(255, 255, 255, 0.05);
+    padding: var(--spacing-md);
+    border-radius: 10px;
+    backdrop-filter: blur(5px);
+}
+
+.service-category h5 {
+    color: var(--primary-color);
+    font-size: 1.2rem;
+    margin-bottom: var(--spacing-md);
+}
+
+.service-category ul {
+    list-style: none;
+}
+
+.service-category li {
+    color: var(--text-gray);
+    margin-bottom: var(--spacing-sm);
+    position: relative;
+    padding-left: 1.5rem;
+}
+
+.service-category li::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 8px;
+    height: 8px;
+    background-color: var(--primary-color);
+    border-radius: 50%;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .section-header h3 {
+        font-size: 1.5rem;
+    }
+
+    .maintenance-info h4 {
+        font-size: 1.2rem;
+    }
+
+    .services-lists {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 480px) {
+    .general-services {
+        padding: var(--spacing-md) var(--spacing-sm);
+    }
+
+    .service-category {
+        padding: var(--spacing-sm);
+    }
+}
+
+
+.location {
+    padding: var(--spacing-lg) var(--spacing-md);
+    text-align: center;
+    position: relative;
+    background: 
+                url('./assets/earth.png') no-repeat center center/cover;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.location::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: radial-gradient(circle at center, 
+                rgba(5, 22, 34, 0.5) 0%,
+                rgba(5, 22, 34, 0.8) 100%);
+    z-index: 1;
+}
+
+.location h2 {
+    color: var(--primary-color);
+    font-size: 1.2rem;
+    margin-bottom: var(--spacing-xs);
+    position: relative;
+    z-index: 2;
+}
+
+.location h3 {
+    font-size: 2.5rem;
+    margin-bottom: var(--spacing-lg);
+    position: relative;
+    z-index: 2;
+}
+
+.locations-container {
+    display: flex;
+    justify-content: center;
+    gap: var(--spacing-lg);
+    margin-top: var(--spacing-lg);
+    flex-wrap: wrap;
+    position: relative;
+    z-index: 2;
+}
+
+.location-item {
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    padding: var(--spacing-md) var(--spacing-lg);
+    border-radius: 10px;
+    min-width: 250px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    transition: transform 0.3s ease;
+}
+
+.location-item:hover {
+    transform: translateY(-5px);
+}
+
+.location-item h4 {
+    color: var(--primary-color);
+    font-size: 1.3rem;
+    margin-bottom: var(--spacing-xs);
+}
+
+.location-item p {
+    color: var(--text-gray);
+    font-size: 1.1rem;
+}
+
+.location .btn-read-more {
+    margin-top: var(--spacing-lg);
+    padding: 0.8rem 2rem;
+    background-color: transparent;
+    border: 2px solid var(--primary-color);
+    color: var(--text-light);
+    border-radius: 5px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    position: relative;
+    z-index: 2;
+}
+
+.location .btn-read-more:hover {
+    background-color: var(--primary-color);
+    transform: translateY(-2px);
+}
+
+/* Animación para el fondo */
+@keyframes rotate {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+/* Earth overlay */
+.location::after {
+    content: '';
+    position: absolute;
+    width: 600px;
+    height: 600px;
+    background: url('earth-dots.png') no-repeat center center/contain;
+    opacity: 0.3;
+    animation: rotate 100s linear infinite;
+    pointer-events: none;
+    z-index: 1;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .location h3 {
+        font-size: 2rem;
+    }
+
+    .location::after {
+        width: 400px;
+        height: 400px;
+    }
+
+    .locations-container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .location-item {
+        width: 100%;
+        max-width: 300px;
+    }
+}
+
+@media (max-width: 480px) {
+    .location h3 {
+        font-size: 1.5rem;
+    }
+
+    .location::after {
+        width: 300px;
+        height: 300px;
+    }
+
+    .location-item {
+        padding: var(--spacing-sm);
+    }
+}
